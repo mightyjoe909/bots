@@ -36,7 +36,7 @@ int sendStatus(void);
 //Common
 int inet_ntoa(struct in_addr);
 int cleanup(void);
-int connection[64];
+int connection[64][5];
 int bots;
 
 #endif
