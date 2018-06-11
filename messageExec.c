@@ -39,7 +39,7 @@ int CheckForNewBot()
 			{
 				/* Connection request on original socket. */
 				size = sizeof (clientname);
-				connection[bots] = accept (sock,
+				connection[bots][0] = accept (sock,
 									(struct sockaddr *) &clientname,
 									&size);
 				if (connection[bots] < 0)
@@ -89,6 +89,7 @@ int GetStatus(int filedes)
 	{
 	  /* Data read. */
 	  fprintf (stderr, "Server: got message: `%s'\n", buffer);
+          connection[filedes][1] = (buffer[0]  - '0');
 	  //sendMessage(filedes);
 	  return 0;
 	}
