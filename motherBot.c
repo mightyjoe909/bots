@@ -27,9 +27,12 @@ int main()
 		
 		if(numberofBots > 0)
 		{
-			sendCommands   = SendCommands(botID);
-			getStatus      = GetStatus(botID);
-			updateModel    = UpdateModel();		
+                    for (int i = 0; i < numberofBots; i++)
+                    {
+			sendCommands   = SendCommands(i);
+			getStatus      = GetStatus(i);	
+                    }
+                    updateModel    = UpdateModel();	
 		}
 	
 	}
